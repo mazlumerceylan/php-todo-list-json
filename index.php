@@ -11,7 +11,14 @@
 </head>
 <body>
   <div id="app">
-            
+    <h1>Todo List</h1>
+    <input type="text" v-model="newTodo" @keyup.enter="addTodo" placeholder="Cosa vuoi fare oggi?" />
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        {{ todo.text }}
+        <button @click="deleteTodo(index)">Cancella</button>
+      </li>
+    </ul>       
   </div>
   
   
